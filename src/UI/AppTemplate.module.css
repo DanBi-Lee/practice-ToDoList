@@ -1,0 +1,12 @@
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    height: 80%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ddd;
+}

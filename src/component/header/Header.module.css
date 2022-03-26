@@ -1,0 +1,12 @@
+.headerBox {
+    padding: 40px 32px;
+}
+
+.headerBox h1 {
+    font-size: 0.32rem;
+}
+
+.headerBox h1 + p {
+    font-size: 0.2rem;
+    color: #999;
+}

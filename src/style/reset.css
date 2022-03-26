@@ -1,0 +1,31 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 0.16rem;
+    font-weight: 600;
+}
+ul, ol, li {
+    list-style: none;
+}
+
+.hidden {
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    left: -99999px;
+    z-index: -99999px;
+    opacity: 0;
+}
