@@ -1,12 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
+import { todolistDispatch } from '../../context/TodolistProvider';
 import style from './ToDoForm.module.css'
 
 function ToDoForm({addItemHandler}) {
     const $text = useRef();
+    const toDoDispatch = useContext(todolistDispatch);
     const onSubmit = (e) => {
         e.preventDefault();
         const text = $text.current.value;
-        addItemHandler(text);
+        toDoDispatch({
+            type: "ADD",
+            text
+        });
         $text.current.value= "";
         $text.current.focus();
     }

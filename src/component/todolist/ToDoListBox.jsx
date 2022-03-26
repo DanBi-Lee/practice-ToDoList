@@ -4,7 +4,7 @@ import ToDoList from './ToDoList';
 import style from './ToDoListBox.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { todolist, todolistHandler } from '../../context/TodolistProvider';
+import { todolist } from '../../context/TodolistProvider';
 
 
 function ToDoListBox() {
@@ -13,15 +13,15 @@ function ToDoListBox() {
         setFormisOpen(prev=>!prev);
     }
     const toDoData = useContext(todolist);
-    const todolistAction = useContext(todolistHandler);
+    
     const total = toDoData.filter(item=> item.isDone === false).length;
 
     return (
         <main className={style.TodoBox}>
             <h2 className={style.amount}>할 일 {total}개 남음</h2>
-            <ToDoList toDoData={toDoData} toggleItemHandler={todolistAction.toggleItemHandler} deleteItemHandler={todolistAction.deleteItemHandler} />
+            <ToDoList toDoData={toDoData} />
             {
-                formisOpen&&<ToDoForm addItemHandler={todolistAction.addItemHandler}/>
+                formisOpen&&<ToDoForm />
             }
             <button className={`${style.toggleButton} ${formisOpen&&style.isOpen}`} onClick={formToggleHandler}>
                 <FontAwesomeIcon icon={faPlus} />
